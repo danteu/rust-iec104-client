@@ -1,0 +1,17 @@
+
+name: Run hello world
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install rust
+        run: sudo apt -yq install rustc cargo
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run cargo
+        run: cargo run
+      
